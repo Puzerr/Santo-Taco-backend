@@ -1,5 +1,5 @@
 import express from "express";
-import { criarComanda } from "../controllers/ComandaController.ks";
+import { criarComanda } from "../controllers/ComandaController.js";
 
 const router = express.Router()
 
