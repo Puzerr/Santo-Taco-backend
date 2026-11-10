@@ -4,6 +4,7 @@ import cors from "cors";
 import connectDB from "./src/config/db.js";
 
 import pratoRoutes from "./src/routes/pratoRoutes.js"
+import comandaRoutes from "./src/routes/comandaRoutes.js"
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ app.use(express.json());
 connectDB();
 
 app.use("/api/pratos", pratoRoutes)
+app.use("/api/comandas", comandaRoutes)
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
