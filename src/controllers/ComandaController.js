@@ -14,7 +14,7 @@ export const criarComanda = async (req, res) => {
       numeroMesa,
       nomeCliente,
       pedidos,
-      status: "Pendente",
+      status: "ABERTA",
     });
 
     await novaComanda.save();
