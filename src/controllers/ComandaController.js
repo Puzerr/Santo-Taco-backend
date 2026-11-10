@@ -26,3 +26,13 @@ export const criarComanda = async (req, res) => {
     res.status(500).json({ error: "Erro interno ao salvar a comanda" });
   }
 };
+
+export const listarComandas = async (req, res) => {
+  try {
+    const comandas = await Comanda.find().sort({ createdAt: -1 });
+    res.status(200).json(comandas);
+  } catch (error) {
+    console.error("Erro ao buscar comandas: ", error);
+    res.status(500).json({ error: "Erro interno ao buscar comandas." });
+  }
+};
